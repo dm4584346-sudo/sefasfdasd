@@ -26,14 +26,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install npm dependencies
         shell: bash
         run: |
           set -Eeuo pipefail
           cd "$DOTA_PROJECT_DIR"
-          npm ci
+          npm install
 
       - name: Typecheck
         shell: bash
